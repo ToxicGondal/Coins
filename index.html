@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Sender Pro - Transaction Log</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-pic" id="profile-pic-container">
+                <img id="profile-img" class="profile-img" src="" alt="Profile Image">
+            </div>
+            <div>
+                <div class="username">Toxic 2.0</div>
+                <div class="coins">
+                    <span>Balance:</span>
+                    <span id="coin-balance">92,538,280</span>
+                    <img class="coin-icon-small" src="coin.png" alt="coin"> 
+                </div>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <div class="input-label">Receiver Username</div>
+            <input id="receiver" type="text" placeholder="Enter receiver username">
+        </div>
+
+        <div class="grid">
+            <div class="card" data-coins="10000" data-amount="10,000"><img class="coin-icon" src="coin.png" alt="coin"><div class="amount">10,000</div></div>
+            <div class="card" data-coins="20000" data-amount="20,000"><img class="coin-icon" src="coin.png" alt="coin"><div class="amount">20,000</div></div>
+            <div class="card" data-coins="40000" data-amount="40,000"><img class="coin-icon" src="coin.png" alt="coin"><div class="amount">40,000</div></div>
+            <div class="card" data-coins="60000" data-amount="60,000"><img class="coin-icon" src="coin.png" alt="coin"><div class="amount">60,000</div></div>
+            <div class="card" data-coins="80000" data-amount="80,000"><img class="coin-icon" src="coin.png" alt="coin"><div class="amount">80,000</div></div>
+            <div class="card" data-coins="100000" data-amount="100,000"><img class="coin-icon" src="coin.png" alt="coin"><div class="amount">100,000</div></div>
+            <div class="card" data-coins="200000" data-amount="200,000"><img class="coin-icon" src="coin.png" alt="coin"><div class="amount">200,000</div></div>
+            <div class="card" data-coins="999999" data-amount="999,999"><img class="coin-icon" src="coin.png" alt="coin"><div class="amount">999,999</div></div>
+        </div>
+
+        <button class="send-btn" onclick="sendCoins()">Send Coins</button>
+
+        <div class="history-section">
+            <h4>History</h4>
+            <ul id="transaction-list">
+                </ul>
+            <p id="no-history-msg" class="no-history">No transactions sent yet.</p>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="loadingPopup">
+        <div class="popup">
+            <div class="loader"></div>
+            <p style="margin-top:25px; font-size:18px; color:#ff0050; font-weight:600;">Sending coins...</p>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="successPopup">
+        <div class="popup">
+            <h3>✔ Coins Sent!</h3>
+            <p id="successMsg"></p>
+            <button class="send-btn" onclick="closeSuccess()">Complete</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="errorPopup">
+        <div class="popup">
+            <h3 style="color:#dc3545;">! Send Failed</h3>
+            <p class="error-msg" id="errorMsg">You must select an amount and enter a username.</p>
+            <button class="send-btn" style="background:#dc3545;" onclick="closeError()">Try Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
